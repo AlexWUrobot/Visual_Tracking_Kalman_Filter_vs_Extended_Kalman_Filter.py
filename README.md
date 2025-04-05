@@ -42,8 +42,19 @@ The target moves in 2D with nonlinear motion (e.g., circular motion), which make
 ## How to improve it?
 1. A 4D state KF and EKF (position + velocity)
    - x = [px, py, vx, vy] (4D state)
+   - Use a more realistic dynamic model. For example, constant velocity (CV):
+   - `F = np.array([[1, 0, dt,  0],
+              [0, 1,  0, dt],
+              [0, 0,  1,  0],
+              [0, 0,  0,  1]])
+
+      H = np.array([[1, 0, 0, 0],
+                    [0, 1, 0, 0]])`
    - KF/EKF use velocity prediction rather than just smoothing.
 2. Correct Jacobian for EKF (if using nonlinear motion)
+   - we are getting (x, y) measurements, so use them directly in EKF too:
+   - Set `h(x) = [px, py]`
+   - `H = [[1, 0], [0, 1]]` → no need for nonlinear observation model in this case.
 3. Linear measurement model (no polar conversion)
 4. Tuned Q and R
    - Q = diag([0.01, 0.01, 0.1, 0.1]) for CV model
