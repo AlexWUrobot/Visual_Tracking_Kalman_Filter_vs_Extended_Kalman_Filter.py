@@ -10,7 +10,10 @@ The target moves in 2D with nonlinear motion (e.g., circular motion), which make
 - EKF handles the nonlinear observation model
 
 ![](case1.png)
+
+
 ![](case1_error.png)
+
 
 ## Why might KF/EKF errors be worse than measurements?
 1.KF model is mismatched (wrong motion or observation assumptions)
