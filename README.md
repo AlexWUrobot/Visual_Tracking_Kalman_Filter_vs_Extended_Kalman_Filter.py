@@ -10,4 +10,4 @@ The target moves in 2D with nonlinear motion (e.g., circular motion), which make
 - EKF handles the nonlinear observation model
 
 ![](case1.png)
-![](case2.png)
+![](case1_error.png)
