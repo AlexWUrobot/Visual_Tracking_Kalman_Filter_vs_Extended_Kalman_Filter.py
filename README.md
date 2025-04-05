@@ -8,3 +8,6 @@ The target moves in 2D with nonlinear motion (e.g., circular motion), which make
 - The object moves in a circle: x = R * cos(ωt), y = R * sin(ωt)
 - Measurement noise is Gaussian
 - EKF handles the nonlinear observation model
+
+![](case1.png)
+![](case2.png)
