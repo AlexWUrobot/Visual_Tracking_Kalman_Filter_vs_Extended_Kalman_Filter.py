@@ -11,3 +11,11 @@ The target moves in 2D with nonlinear motion (e.g., circular motion), which make
 
 ![](case1.png)
 ![](case1_error.png)
+
+## Why might KF/EKF errors be worse than measurements?
+1.KF model is mismatched (wrong motion or observation assumptions)
+2.EKF update uses polar coordinates but measurements are Cartesian
+3.Poorly tuned noise covariances (Q and R)
+
+![](case2.png)
+![](case2_error.png)
